@@ -79,3 +79,26 @@ EmpireChroniclesBuildingGrowth.prototype.GetState = function()
 		reservedCells: this.reservedCells.slice()
 	};
 };
+EmpireChroniclesBuildingGrowth.prototype.CanApplyUpgradeRules = function(rules, population, wellbeing, technologyLevel)
+{
+	if (!rules || typeof rules.CanUpgrade !== "function")
+		return false;
+
+	return rules.CanUpgrade(population, wellbeing, technologyLevel) &&
+		(this.currentLevel < this.maximumLevel);
+};
+
+EmpireChroniclesBuildingGrowth.prototype.ShouldAutoUpgrade = function(rules, population, wellbeing, technologyLevel)
+{
+	if (!rules || typeof rules.IsAutomatic !== "function")
+		return false;
+
+	return rules.IsAutomatic() &&
+		this.CanApplyUpgradeRules(rules, population, wellbeing, technologyLevel);
+};
+
+EmpireChroniclesBuildingGrowth.prototype.RequiresPlayerUpgrade = function(rules)
+{
+	return rules && typeof rules.RequiresPlayerAction === "function" &&
+		rules.RequiresPlayerAction();
+};
