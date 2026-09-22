@@ -43,9 +43,10 @@ EmpireChroniclesProgression.prototype.GetPopulationStage = function(population)
 };
 
 EmpireChroniclesProgression.prototype.CanReachStage =
-	function(population, targetStage, technologyLevel)
+	function(population, targetStage, technologyLevel, cemeteryLevel)
 {
 	const requiredTechnology = this.GetRequiredTechnology(targetStage);
+	const requiredCemetery = targetStage === "city" ? 3 : 0;
 	const populationStage = this.GetPopulationStage(population);
 
 	const stageOrder = {
@@ -57,11 +58,12 @@ EmpireChroniclesProgression.prototype.CanReachStage =
 	};
 
 	return stageOrder[populationStage] >= stageOrder[targetStage] &&
-		technologyLevel >= requiredTechnology;
+		technologyLevel >= requiredTechnology &&
+		(cemeteryLevel || 0) >= requiredCemetery;
 };
 
 EmpireChroniclesProgression.prototype.GetNextStage =
-	function(population, technologyLevel)
+	function(population, technologyLevel, cemeteryLevel)
 {
 	const current = this.GetPopulationStage(population);
 	const next = {
@@ -75,7 +77,7 @@ EmpireChroniclesProgression.prototype.GetNextStage =
 	if (next === current)
 		return current;
 
-	return this.CanReachStage(population, next, technologyLevel)
+	return this.CanReachStage(population, next, technologyLevel, cemeteryLevel)
 		? next
 		: current;
 };
