@@ -5,32 +5,22 @@
 // detailed production effects are added in later layers.
 
 const EMPIRE_CHRONICLES_BUILDINGS = [
-  { id: "government_office", category: "government", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 4, prerequisiteBuildings: [] },
-  { id: "small_house", category: "residential", technologyLevel: 1, minimumSettlementStage: "settlement", width: 1, depth: 1, maximumWidth: 3, maximumDepth: 3, upgradeLevels: [
-    { level: 1, width: 1, depth: 1, shape: "compact" },
-    { level: 2, width: 2, depth: 2, shape: "square" },
-    { level: 3, width: 2, depth: 2, shape: "wide" },
-    { level: 4, width: 3, depth: 3, shape: "expanded" },
-    { level: 5, width: 3, depth: 3, shape: "modern" }
-  ], prerequisiteBuildings: [] },
-  { id: "basic_storage", category: "storage", technologyLevel: 1, minimumSettlementStage: "settlement", width: 2, depth: 2, prerequisiteBuildings: [] },
-  { id: "primary_school", category: "education", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 3, prerequisiteBuildings: [] },
-
-  { id: "health_center", category: "healthcare", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, prerequisiteBuildings: ["primary_school"] },
-  { id: "workshop", category: "industry", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, prerequisiteBuildings: ["basic_storage"] },
-  { id: "market", category: "economy", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, prerequisiteBuildings: ["basic_storage"] },
-
-  { id: "hospital", category: "healthcare", technologyLevel: 3, minimumSettlementStage: "city", width: 4, depth: 4, prerequisiteBuildings: ["health_center"] },
-  { id: "factory", category: "industry", technologyLevel: 3, minimumSettlementStage: "city", width: 4, depth: 4, prerequisiteBuildings: ["workshop", "basic_storage"] },
-  { id: "advanced_school", category: "education", technologyLevel: 3, minimumSettlementStage: "city", width: 4, depth: 4, prerequisiteBuildings: ["primary_school"] },
-
-  { id: "university", category: "education", technologyLevel: 4, minimumSettlementStage: "province", width: 4, depth: 5, prerequisiteBuildings: ["advanced_school"] },
-  { id: "advanced_factory", category: "industry", technologyLevel: 4, minimumSettlementStage: "province", width: 5, depth: 5, prerequisiteBuildings: ["factory"] },
-  { id: "national_hospital", category: "healthcare", technologyLevel: 4, minimumSettlementStage: "province", width: 5, depth: 5, prerequisiteBuildings: ["hospital"] },
-
-  { id: "research_center", category: "research", technologyLevel: 5, minimumSettlementStage: "capital", width: 5, depth: 5, prerequisiteBuildings: ["university"] },
-  { id: "advanced_industry", category: "industry", technologyLevel: 5, minimumSettlementStage: "capital", width: 6, depth: 6, prerequisiteBuildings: ["advanced_factory"] },
-  { id: "national_command_center", category: "government", technologyLevel: 5, minimumSettlementStage: "capital", width: 6, depth: 6, prerequisiteBuildings: ["government_office"] }
+  { id: "government_office", category: "government", managementType: "player_build", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 4, maximumWidth: 3, maximumDepth: 4, prerequisiteBuildings: [] },
+  { id: "small_house", category: "residential", managementType: "community_growth", technologyLevel: 1, minimumSettlementStage: "settlement", width: 1, depth: 1, maximumWidth: 3, maximumDepth: 3, prerequisiteBuildings: [] },
+  { id: "basic_storage", category: "storage", managementType: "player_build", technologyLevel: 1, minimumSettlementStage: "settlement", width: 2, depth: 2, maximumWidth: 2, maximumDepth: 2, prerequisiteBuildings: [] },
+  { id: "primary_school", category: "education", managementType: "player_build", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 3, maximumWidth: 4, maximumDepth: 4, prerequisiteBuildings: [] },
+  { id: "health_center", category: "healthcare", managementType: "player_upgrade", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, maximumWidth: 5, maximumDepth: 5, prerequisiteBuildings: [] },
+  { id: "workshop", category: "industry", managementType: "player_upgrade", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, maximumWidth: 5, maximumDepth: 5, prerequisiteBuildings: [] },
+  { id: "market", category: "economy", managementType: "player_upgrade", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, maximumWidth: 5, maximumDepth: 5, prerequisiteBuildings: [] },
+  { id: "hospital", category: "healthcare", managementType: "player_upgrade", technologyLevel: 3, minimumSettlementStage: "city", width: 4, depth: 4, maximumWidth: 6, maximumDepth: 6, prerequisiteBuildings: [] },
+  { id: "factory", category: "industry", managementType: "player_upgrade", technologyLevel: 3, minimumSettlementStage: "city", width: 4, depth: 4, maximumWidth: 6, maximumDepth: 6, prerequisiteBuildings: [] },
+  { id: "advanced_school", category: "education", managementType: "player_upgrade", technologyLevel: 3, minimumSettlementStage: "city", width: 4, depth: 4, maximumWidth: 6, maximumDepth: 6, prerequisiteBuildings: [] },
+  { id: "university", category: "education", managementType: "player_upgrade", technologyLevel: 4, minimumSettlementStage: "province", width: 4, depth: 5, maximumWidth: 7, maximumDepth: 7, prerequisiteBuildings: [] },
+  { id: "advanced_factory", category: "industry", managementType: "player_upgrade", technologyLevel: 4, minimumSettlementStage: "province", width: 5, depth: 5, maximumWidth: 7, maximumDepth: 7, prerequisiteBuildings: [] },
+  { id: "national_hospital", category: "healthcare", managementType: "player_upgrade", technologyLevel: 4, minimumSettlementStage: "province", width: 5, depth: 5, maximumWidth: 7, maximumDepth: 7, prerequisiteBuildings: [] },
+  { id: "research_center", category: "research", managementType: "player_upgrade", technologyLevel: 5, minimumSettlementStage: "capital", width: 5, depth: 5, maximumWidth: 8, maximumDepth: 8, prerequisiteBuildings: [] },
+  { id: "advanced_industry", category: "industry", managementType: "player_upgrade", technologyLevel: 5, minimumSettlementStage: "capital", width: 6, depth: 6, maximumWidth: 9, maximumDepth: 9, prerequisiteBuildings: [] },
+  { id: "national_command_center", category: "government", managementType: "player_upgrade", technologyLevel: 5, minimumSettlementStage: "capital", width: 6, depth: 6, maximumWidth: 9, maximumDepth: 9, prerequisiteBuildings: [] }
 ];
 
 function getEmpireChroniclesBuilding(buildingId)
