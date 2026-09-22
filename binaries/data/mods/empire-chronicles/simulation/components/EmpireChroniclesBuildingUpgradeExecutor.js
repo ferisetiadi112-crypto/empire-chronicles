@@ -43,7 +43,13 @@ EmpireChroniclesBuildingUpgradeExecutor.prototype.Execute = function(growth, rul
 		return false;
 	}
 
-	growth.SetLevel(growth.currentLevel + 1);
+	if (typeof growth.ApplyUpgradeProfile === "function" &&
+		!growth.ApplyUpgradeProfile(rules))
+		return false;
+
+	if (typeof growth.ApplyUpgradeProfile !== "function")
+		growth.SetLevel(growth.currentLevel + 1);
+
 	return true;
 };
 
@@ -55,7 +61,13 @@ EmpireChroniclesBuildingUpgradeExecutor.prototype.ExecutePlayerUpgrade = functio
 	if (!this.CanExecute(growth, rules, population, wellbeing, technologyLevel))
 		return false;
 
-	growth.SetLevel(growth.currentLevel + 1);
+	if (typeof growth.ApplyUpgradeProfile === "function" &&
+		!growth.ApplyUpgradeProfile(rules))
+		return false;
+
+	if (typeof growth.ApplyUpgradeProfile !== "function")
+		growth.SetLevel(growth.currentLevel + 1);
+
 	return true;
 };
 
