@@ -1,0 +1,10 @@
+{
+  "name": "empire-chronicles",
+  "version": "0.1.0",
+  "label": "Empire Chronicles",
+  "url": "",
+  "description": "Modern-day grand strategy and city simulation built on the 0 A.D. engine.",
+  "dependencies": [
+    "0ad"
+  ]
+}
