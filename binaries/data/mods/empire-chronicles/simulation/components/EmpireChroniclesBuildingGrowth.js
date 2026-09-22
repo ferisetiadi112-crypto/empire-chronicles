@@ -102,3 +102,37 @@ EmpireChroniclesBuildingGrowth.prototype.RequiresPlayerUpgrade = function(rules)
 	return rules && typeof rules.RequiresPlayerAction === "function" &&
 		rules.RequiresPlayerAction();
 };
+
+EmpireChroniclesBuildingGrowth.prototype.GetNextUpgradeProfile = function(rules)
+{
+	if (!rules || typeof rules.GetNextLevelRule !== "function")
+		return null;
+
+	return rules.GetNextLevelRule(this.currentLevel);
+};
+
+EmpireChroniclesBuildingGrowth.prototype.GetNextFootprint = function(rules)
+{
+	var profile = this.GetNextUpgradeProfile(rules);
+
+	if (!profile)
+		return null;
+
+	return {
+		level: +profile.level,
+		width: +profile.width,
+		depth: +profile.depth,
+		shape: profile.shape || "default"
+	};
+};
+
+EmpireChroniclesBuildingGrowth.prototype.ApplyUpgradeProfile = function(rules)
+{
+	var profile = this.GetNextUpgradeProfile(rules);
+
+	if (!profile || this.currentLevel >= this.maximumLevel)
+		return false;
+
+	this.SetLevel(+profile.level);
+	return true;
+};
