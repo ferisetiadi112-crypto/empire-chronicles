@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entity>
+	<Identity>
+		<SpecificName>Empire Chronicles Settlement</SpecificName>
+	</Identity>
+	<EmpireChroniclesSettlement>
+		<SettlementName>New Settlement</SettlementName>
+		<CountryId>country_001</CountryId>
+	</EmpireChroniclesSettlement>
+</Entity>
