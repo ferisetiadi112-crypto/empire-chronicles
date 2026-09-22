@@ -4,8 +4,11 @@ This directory is the engine-facing simulation layer.
 
 ## Current stage
 
-The mod currently establishes the 0 A.D. mod structure and exposes the
-Empire Chronicles configuration through globalscripts/EmpireChronicles.js.
+The mod now contains a first native 0 A.D. simulation component for the
+Empire Chronicles national population model.
+
+The component keeps workers, soldiers and unemployed people inside one
+national population pool. It does not create separate population pools.
 
 The repository-level simulation model in /simulation remains the source
 design for:
@@ -17,8 +20,8 @@ design for:
 - world state
 - simulation ticks
 
-The next integration step is to move these rules into native 0 A.D.
-simulation components and system/template definitions.
+The next integration step is to connect settlement entities and territory
+to the country component.
 
 ## Design rules
 
