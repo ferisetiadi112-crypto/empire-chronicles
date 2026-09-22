@@ -174,3 +174,29 @@ EmpireChroniclesBuildingGrowth.prototype.GetReservedFootprintState = function()
 		cells: this.reservedCells
 	};
 };
+
+EmpireChroniclesBuildingGrowth.prototype.CanUpgradeFootprint = function(placement, origin, width, depth)
+{
+	if (!this.CanUpgradeWithinReservedFootprint(origin, width, depth))
+		return false;
+
+	if (!placement || typeof placement.GetFootprintCells !== "function")
+		return false;
+
+	var footprint = placement.GetFootprintCells(origin, width, depth);
+
+	if (!footprint || !this.reservedCells)
+		return false;
+
+	for (var i = 0; i < footprint.length; ++i)
+	{
+		if (this.reservedCells.indexOf(footprint[i]) === -1)
+			return false;
+	}
+
+	if (typeof placement.CanPlace === "function" &&
+		!placement.CanPlace(origin, width, depth))
+		return false;
+
+	return true;
+};
