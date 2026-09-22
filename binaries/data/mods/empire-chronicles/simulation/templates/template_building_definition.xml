@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entity>
+	<Identity>
+		<SpecificName>Empire Chronicles Building</SpecificName>
+	</Identity>
+	<EmpireChroniclesBuildingDefinition>
+		<BuildingId>generic_building</BuildingId>
+		<Category>general</Category>
+		<TechnologyLevel>1</TechnologyLevel>
+		<FootprintWidth>2</FootprintWidth>
+		<FootprintDepth>2</FootprintDepth>
+	</EmpireChroniclesBuildingDefinition>
+</Entity>
