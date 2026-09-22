@@ -6,7 +6,13 @@
 
 const EMPIRE_CHRONICLES_BUILDINGS = [
   { id: "government_office", category: "government", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 4, prerequisiteBuildings: [] },
-  { id: "small_house", category: "residential", technologyLevel: 1, minimumSettlementStage: "settlement", width: 2, depth: 2, prerequisiteBuildings: [] },
+  { id: "small_house", category: "residential", technologyLevel: 1, minimumSettlementStage: "settlement", width: 1, depth: 1, maximumWidth: 3, maximumDepth: 3, upgradeLevels: [
+    { level: 1, width: 1, depth: 1, shape: "compact" },
+    { level: 2, width: 2, depth: 2, shape: "square" },
+    { level: 3, width: 2, depth: 2, shape: "wide" },
+    { level: 4, width: 3, depth: 3, shape: "expanded" },
+    { level: 5, width: 3, depth: 3, shape: "modern" }
+  ], prerequisiteBuildings: [] },
   { id: "basic_storage", category: "storage", technologyLevel: 1, minimumSettlementStage: "settlement", width: 2, depth: 2, prerequisiteBuildings: [] },
   { id: "primary_school", category: "education", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 3, prerequisiteBuildings: [] },
 
