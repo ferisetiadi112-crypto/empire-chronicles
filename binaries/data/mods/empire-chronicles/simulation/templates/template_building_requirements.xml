@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entity>
+	<Identity>
+		<SpecificName>Empire Chronicles Building Requirements</SpecificName>
+	</Identity>
+	<EmpireChroniclesBuildingRequirements>
+		<TechnologyLevel>1</TechnologyLevel>
+		<SettlementStage>settlement</SettlementStage>
+	</EmpireChroniclesBuildingRequirements>
+</Entity>
