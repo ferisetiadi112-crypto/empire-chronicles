@@ -6,7 +6,25 @@
 
 const EMPIRE_CHRONICLES_BUILDINGS = [
   { id: "government_office", category: "government", managementType: "player_build", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 4, maximumWidth: 3, maximumDepth: 4, prerequisiteBuildings: [] },
-  { id: "small_house", category: "residential", managementType: "community_growth", technologyLevel: 1, minimumSettlementStage: "settlement", width: 1, depth: 1, maximumWidth: 3, maximumDepth: 3, prerequisiteBuildings: [] },
+  {
+    id: "small_house",
+    category: "residential",
+    managementType: "community_growth",
+    technologyLevel: 1,
+    minimumSettlementStage: "settlement",
+    width: 1,
+    depth: 1,
+    maximumWidth: 3,
+    maximumDepth: 3,
+    prerequisiteBuildings: [],
+    upgradeLevels: [
+      { level: 1, width: 1, depth: 1, shape: "compact", minimumPopulation: 20, requiredWellbeing: 0, requiredTechnology: 1 },
+      { level: 2, width: 2, depth: 2, shape: "square", minimumPopulation: 30, requiredWellbeing: 35, requiredTechnology: 1 },
+      { level: 3, width: 2, depth: 2, shape: "wide", minimumPopulation: 45, requiredWellbeing: 45, requiredTechnology: 1 },
+      { level: 4, width: 3, depth: 3, shape: "expanded", minimumPopulation: 65, requiredWellbeing: 55, requiredTechnology: 2 },
+      { level: 5, width: 3, depth: 3, shape: "modern", minimumPopulation: 90, requiredWellbeing: 65, requiredTechnology: 2 }
+    ]
+  },
   { id: "basic_storage", category: "storage", managementType: "player_build", technologyLevel: 1, minimumSettlementStage: "settlement", width: 2, depth: 2, maximumWidth: 2, maximumDepth: 2, prerequisiteBuildings: [] },
   { id: "primary_school", category: "education", managementType: "player_build", technologyLevel: 1, minimumSettlementStage: "settlement", width: 3, depth: 3, maximumWidth: 4, maximumDepth: 4, prerequisiteBuildings: [] },
   { id: "health_center", category: "healthcare", managementType: "player_upgrade", technologyLevel: 2, minimumSettlementStage: "town", width: 3, depth: 3, maximumWidth: 5, maximumDepth: 5, prerequisiteBuildings: [] },
