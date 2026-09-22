@@ -136,3 +136,41 @@ EmpireChroniclesBuildingGrowth.prototype.ApplyUpgradeProfile = function(rules)
 	this.SetLevel(+profile.level);
 	return true;
 };
+
+EmpireChroniclesBuildingGrowth.prototype.CanApplyFootprint = function(placement, origin)
+{
+	if (!placement || typeof placement.ContainsCell !== "function")
+		return false;
+
+	var profile = this.GetNextUpgradeProfile({
+		GetNextLevelRule: function() { return null; }
+	});
+
+	if (!profile)
+		return true;
+
+	return placement.CanPlace(
+		origin,
+		+profile.width,
+		+profile.depth
+	);
+};
+
+EmpireChroniclesBuildingGrowth.prototype.CanUpgradeWithinReservedFootprint = function(origin, width, depth)
+{
+	if (!this.reservedWidth || !this.reservedDepth)
+		return false;
+
+	return width <= this.reservedWidth &&
+		depth <= this.reservedDepth;
+};
+
+EmpireChroniclesBuildingGrowth.prototype.GetReservedFootprintState = function()
+{
+	return {
+		width: this.reservedWidth,
+		depth: this.reservedDepth,
+		area: this.GetReservedArea(),
+		cells: this.reservedCells
+	};
+};
