@@ -4,14 +4,15 @@ This directory is the engine-facing simulation layer.
 
 ## Current stage
 
-The mod now contains a first native 0 A.D. simulation component for the
-Empire Chronicles national population model.
+The mod now contains native components for:
 
-The component keeps workers, soldiers and unemployed people inside one
-national population pool. It does not create separate population pools.
+- national population
+- settlements
+- government offices
+- cell-based settlement territory
+- adjacent territory expansion
 
-The repository-level simulation model in /simulation remains the source
-design for:
+The repository-level simulation model in /simulation remains the source design for:
 
 - simulation time
 - country state
@@ -20,13 +21,27 @@ design for:
 - world state
 - simulation ticks
 
-The next integration step is to connect settlement entities and territory
-to the country component.
+## Territory rules
 
-## Design rules
+- Settlement territory is a collection of discrete world cells.
+- Territory is not a permanent circle or radius.
+- New territory cells must be adjacent to existing territory.
+- Government Office is the settlement control center.
+- Government Office does not itself define the settlement boundary.
+- Buildings will later require valid settlement territory for placement.
 
-- Workers, soldiers and unemployed people are classifications of the same
-  national population.
-- Settlement territory is cell/tile based, not a permanent circle.
-- Government offices act as settlement control centers.
-- The player-facing game remains modern-day only.
+## Settlement rules
+
+Settlement stages are population-driven:
+
+- 20+: settlement
+- 40+: town
+- 70+: city
+- 110+: province
+- 160+: capital
+
+The player-facing game remains modern-day only.
+
+## Population rules
+
+Workers, soldiers and unemployed people are classifications of the same national population pool. They are not additional population pools.
