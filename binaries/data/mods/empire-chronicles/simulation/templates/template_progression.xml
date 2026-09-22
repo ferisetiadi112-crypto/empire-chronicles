@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entity>
+	<Identity>
+		<SpecificName>Empire Chronicles Progression</SpecificName>
+	</Identity>
+	<EmpireChroniclesProgression>
+		<TechnologyLevel>1</TechnologyLevel>
+	</EmpireChroniclesProgression>
+</Entity>
