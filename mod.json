@@ -1,0 +1,12 @@
+{
+  "name": "empire-chronicles",
+  "version": "0.1.0",
+  "label": "Empire Chronicles",
+  "description": "Modern-day grand strategy, city-building, and real-time simulation for 0 A.D.",
+  "dependencies": [
+    "0ad=0.28.0"
+  ],
+  "author_name": [
+    "Feri Setiadi"
+  ]
+}
