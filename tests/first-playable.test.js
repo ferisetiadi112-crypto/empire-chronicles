@@ -25,8 +25,8 @@ const randomMapPath = path.join(
   "binaries/data/mods/empire-chronicles/maps/random/empire_chronicles_first_playable.js"
 );
 const randomMapSource = fs.readFileSync(randomMapPath, "utf8");
-assert.match(randomMapSource, /export function\\* generateMap\\(mapSettings\\)/);
-assert.doesNotMatch(randomMapSource, /function\\* GenerateMap/);
+assert.match(randomMapSource, /export function\* generateMap\(mapSettings\)/);
+assert.doesNotMatch(randomMapSource, /function\* GenerateMap/);
 
 const randomMapMetadataPath = path.join(
   ROOT,
