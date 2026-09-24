@@ -19,6 +19,11 @@ const EC_SIMULATION = {
     NEW_COUNTRY: 20,
     GLOBAL_CAP: 100000000,
     COUNTRY_CAP: 10000000
+  },
+
+  RESOURCES: {
+    STOCKS: ["food", "money", "buildingMaterials", "fuel", "medicine"],
+    UTILITIES: ["electricity", "water", "sanitation", "communications"]
   }
 };
 
