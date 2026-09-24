@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Scenario version="7">
+  <Environment>
+    <SkySet>cumulus</SkySet>
+    <SunColor r="0.729412" g="0.729412" b="0.647059"/>
+    <SunElevation angle="0.748813"/>
+    <SunRotation angle="1.07685"/>
+    <AmbientColor r="0.4" g="0.4" b="0.4"/>
+  </Environment>
+
+  <Camera>
+    <Position x="256" y="90" z="256"/>
+    <Rotation angle="0"/>
+    <Declination angle="0.610865"/>
+  </Camera>
+
+  <ScriptSettings><![CDATA[
+{
+  "Name": "Empire Chronicles — First Playable",
+  "Description": "First playable integration scenario: one country, one settlement, 20 shared population, Technology I.",
+  "Keywords": ["empire", "chronicles", "modern", "city", "settlement"],
+  "PlayerData": [
+    {
+      "Civ": "athen",
+      "Name": "Empire Chronicles",
+      "Resources": {
+        "food": 1000,
+        "wood": 300,
+        "stone": 0,
+        "metal": 500
+      }
+    }
+  ],
+  "CircularMap": true,
+  "RevealMap": true,
+  "VictoryConditions": [],
+  "TriggerScripts": ["scenarios/empire_chronicles_first_playable.js"]
+}
+]]></ScriptSettings>
+
+  <Entities>
+    <Entity uid="1000">
+      <Template>structures/empire_chronicles/government_office</Template>
+      <Player>1</Player>
+      <Position x="256" z="256"/>
+      <Orientation y="0"/>
+    </Entity>
+
+    <Entity uid="1001">
+      <Template>structures/empire_chronicles/small_house</Template>
+      <Player>1</Player>
+      <Position x="225" z="256"/>
+      <Orientation y="0"/>
+    </Entity>
+
+    <Entity uid="1100">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="238" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1101">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="244" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1102">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="250" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1103">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="256" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1104">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="262" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1105">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="268" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1106">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="274" z="238"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1107">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="238" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1108">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="244" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1109">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="250" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1110">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="256" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1111">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="262" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1112">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="268" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1113">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="274" z="246"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1114">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="238" z="254"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1115">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="244" z="254"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1116">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="250" z="254"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1117">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="256" z="254"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1118">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="262" z="254"/>
+      <Orientation y="0"/>
+    </Entity>
+    <Entity uid="1119">
+      <Template>units/athen/support_female_citizen</Template>
+      <Player>1</Player>
+      <Position x="268" z="254"/>
+      <Orientation y="0"/>
+    </Entity>
+  </Entities>
+</Scenario>
