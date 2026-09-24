@@ -20,9 +20,9 @@ EmpireChroniclesProgression.prototype.GetRequiredTechnology = function(stage)
 	const requirements = {
 		settlement: 1,
 		town: 1,
-		city: 2,
-		province: 3,
-		capital: 4
+		city: 1,
+		province: 1,
+		capital: 1
 	};
 
 	return requirements[stage] || 5;
