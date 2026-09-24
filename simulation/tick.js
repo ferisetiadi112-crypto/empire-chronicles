@@ -11,7 +11,12 @@ function runSimulationTick(state, gameHours = 1, systems) {
   advanceSimulationClock(state.time, gameHours);
 
   for (const settlement of state.world.settlements) {
-    const country = state.world.countries.find(candidate => candidate.id === settlement.countryId);\n    settlement.stage = getSettlementStage(\n      settlement.population,\n      country ? country.technologyLevel : 1,\n      settlement.cemeteryLevel || 0\n    );
+    const country = state.world.countries.find(candidate => candidate.id === settlement.countryId);
+    settlement.stage = getSettlementStage(
+      settlement.population,
+      country ? country.technologyLevel : 1,
+      settlement.cemeteryLevel || 0
+    );
   }
 
   if (systems && typeof systems.run === "function")
