@@ -91,6 +91,16 @@ for (const relativePath of LOAD_ORDER)
   });
 }
 
+assert.deepStrictEqual(
+  context.EC_RESOURCE_TYPES,
+  ["food", "money", "buildingMaterials", "fuel", "medicine"]
+);
+assert.deepStrictEqual(
+  context.EC_UTILITY_TYPES,
+  ["electricity", "water", "sanitation", "communications"]
+);
+assert.strictEqual(context.validateEconomy(context.createEconomy()), true);
+
 const simulation = context.createEmpireChroniclesSimulation();
 const state = simulation.state;
 const country = state.world.countries[0];
