@@ -1,0 +1,8 @@
+{
+	"settings": {
+		"Name": "Empire Chronicles — First Playable",
+		"Script": "empire_chronicles_first_playable.js",
+		"Description": "First playable Empire Chronicles map: modern-day prototype foundation with one shared population pool, Technology I, Government Office and Small House.",
+		"Keywords": ["empire-chronicles", "first-playable", "modern"]
+	}
+}
