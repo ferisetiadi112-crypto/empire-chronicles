@@ -29,6 +29,11 @@ const progressionComponentPath = path.join(
   "binaries/data/mods/empire-chronicles/simulation/components/EmpireChroniclesProgression.js"
 );
 const progressionComponentSource = fs.readFileSync(progressionComponentPath, "utf8");
+const settlementComponentPath = path.join(
+  ROOT,
+  "binaries/data/mods/empire-chronicles/simulation/components/EmpireChroniclesSettlement.js"
+);
+const settlementComponentSource = fs.readFileSync(settlementComponentPath, "utf8");
 const governmentOfficeTemplatePath = path.join(
   ROOT,
   "binaries/data/mods/empire-chronicles/simulation/templates/structures/empire_chronicles/government_office.xml"
@@ -49,6 +54,18 @@ assert.match(
 assert.match(
   governmentOfficeTemplateSource,
   /<TechnologyLevel>1<\/TechnologyLevel>/
+);
+assert.match(
+  settlementComponentSource,
+  /Engine\.RegisterComponentType\(/
+);
+assert.match(
+  settlementComponentSource,
+  /<element name='CemeteryLevel'>/
+);
+assert.match(
+  governmentOfficeTemplateSource,
+  /<EmpireChroniclesSettlement>/
 );
 
 
