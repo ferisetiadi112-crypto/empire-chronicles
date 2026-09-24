@@ -7,4 +7,10 @@
   <EmpireChroniclesProgression>
     <TechnologyLevel>1</TechnologyLevel>
   </EmpireChroniclesProgression>
+  <EmpireChroniclesSettlement>
+    <SettlementName>Capital Settlement</SettlementName>
+    <CountryId>country_001</CountryId>
+    <Population>20</Population>
+    <CemeteryLevel>0</CemeteryLevel>
+  </EmpireChroniclesSettlement>
 </Entity>
