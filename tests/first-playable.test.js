@@ -38,6 +38,20 @@ const governmentOfficeTemplateSource = fs.readFileSync(governmentOfficeTemplateP
 const randomMapSource = fs.readFileSync(randomMapPath, "utf8");
 assert.match(randomMapSource, /export function\* generateMap\(mapSettings\)/);
 assert.doesNotMatch(randomMapSource, /function\* GenerateMap/);
+assert.match(
+  progressionComponentSource,
+  /Engine\.RegisterComponentType\(IID_EmpireChroniclesProgression/
+);
+assert.match(
+  governmentOfficeTemplateSource,
+  /<EmpireChroniclesProgression>/
+);
+assert.match(
+  governmentOfficeTemplateSource,
+  /<TechnologyLevel>1<\/TechnologyLevel>/
+);
+
+
 
 const randomMapMetadataPath = path.join(
   ROOT,
