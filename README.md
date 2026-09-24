@@ -262,7 +262,9 @@ Current residential prototype: Level 1 1×1 → Level 2 2×2 → Level 3 2×2 di
 
 ### Important current limitation
 
-These systems are currently foundational data/components. Complete integration into the 0 A.D. simulation loop, GUI, Atlas-authored maps, visual assets, production calculations, actual population transitions and full gameplay interactions has not yet been completed or engine-tested.
+The first random-map prototype is engine-tested and now loads successfully in 0 A.D. Release 28. The Government Office also has an engine-facing progression and settlement-state bridge, including the City Cemetery Level 3 gate.
+
+These systems are still foundational. Complete integration into the 0 A.D. simulation loop, GUI, Atlas-authored maps, visual assets, production calculations, actual population transitions and full gameplay interactions has not yet been completed or engine-tested.
 
 Do not claim that a system is fully playable merely because its component/catalog has been committed.
 
