@@ -92,11 +92,11 @@ for (const relativePath of LOAD_ORDER)
 }
 
 assert.deepStrictEqual(
-  context.EC_RESOURCE_TYPES,
+  Array.from(context.EC_RESOURCE_TYPES),
   ["food", "money", "buildingMaterials", "fuel", "medicine"]
 );
 assert.deepStrictEqual(
-  context.EC_UTILITY_TYPES,
+  Array.from(context.EC_UTILITY_TYPES),
   ["electricity", "water", "sanitation", "communications"]
 );
 assert.strictEqual(context.validateEconomy(context.createEconomy()), true);
