@@ -20,6 +20,7 @@
   "Name": "Empire Chronicles — First Playable",
   "Description": "First playable integration scenario: one country, one settlement, 20 shared population, Technology I.",
   "Keywords": ["empire", "chronicles", "modern", "city", "settlement"],
+  "Script": "pyrenean_sierra.js",
   "PlayerData": [
     {
       "Civ": "athen",
