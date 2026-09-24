@@ -56,6 +56,14 @@ assert.strictEqual(country.population.total, 40);
 assert.strictEqual(settlement.population, 40);
 assert.strictEqual(settlement.stage, "town");
 
+// City requires both 70 population and Cemetery Level 3.
+simulation.addPopulation(30);
+assert.strictEqual(country.population.total, 70);
+assert.strictEqual(settlement.stage, "town");
+settlement.cemeteryLevel = 3;
+simulation.runTick(1);
+assert.strictEqual(settlement.stage, "city");
+
 simulation.setSpeed("paused");
 assert.strictEqual(state.time.paused, true);
 simulation.setSpeed("very_fast");
