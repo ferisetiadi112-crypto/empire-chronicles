@@ -1,7 +1,6 @@
 // Empire Chronicles engine bridge.
-// This file is intentionally small: the detailed simulation rules remain
-// in the repository's simulation/ layer until they are connected to
-// 0 A.D. simulation components.
+// Runtime rules remain in the repository-level simulation layer and native
+// simulation components. This bridge exposes the first playable contract.
 
 var EmpireChronicles = {
   VERSION: "0.1.0",
@@ -22,10 +21,24 @@ var EmpireChronicles = {
   },
 
   SETTLEMENT_STAGES: [
-    { "id": "settlement", "minPopulation": 20 },
-    { "id": "town", "minPopulation": 40 },
-    { "id": "city", "minPopulation": 70 },
-    { "id": "province", "minPopulation": 110 },
-    { "id": "capital", "minPopulation": 160 }
-  ]
+    { id: "settlement", minPopulation: 20 },
+    { id: "town", minPopulation: 40 },
+    { id: "city", minPopulation: 70 },
+    { id: "province", minPopulation: 110 },
+    { id: "capital", minPopulation: 160 }
+  ],
+
+  FIRST_PLAYABLE: {
+    technologyLevel: 1,
+    population: 20,
+    settlementStage: "settlement",
+    townPopulation: 40,
+    resources: {
+      food: 1000,
+      money: 500,
+      buildingMaterials: 300
+    },
+    startingBuildings: ["government_office"],
+    constructibleBuildings: ["small_house"]
+  }
 };
