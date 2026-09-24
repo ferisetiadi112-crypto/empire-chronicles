@@ -5,6 +5,7 @@ on:
     paths:
       - "simulation/**"
       - "tests/**"
+      - "binaries/data/mods/empire-chronicles/**"
   pull_request:
     paths:
       - "simulation/**"
