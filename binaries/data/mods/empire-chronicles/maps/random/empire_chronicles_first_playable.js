@@ -1,12 +1,13 @@
 Engine.LoadLibrary("rmgen");
 Engine.LoadLibrary("rmgen-common");
 
-function* generateMap()
+export function* generateMap(mapSettings)
 {
 	globalThis.g_Map = new RandomMap(0, "grass1_spring");
 
 	const playerCount = getNumPlayers();
-	const playerPlacement = playerPlacementCircle(fractionToTiles(0.35));
+	const { playerIDs, playerPosition } = playerPlacementCircle(fractionToTiles(0.35));
+	const playerPlacement = [playerIDs, playerPosition];
 
 	placePlayerBases({
 		"PlayerPlacement": playerPlacement,
@@ -24,7 +25,7 @@ function* generateMap()
 	for (let i = 0; i < playerCount; ++i)
 	{
 		const playerId = i + 1;
-		const pos = playerPlacement[1][i];
+		const pos = playerPosition[i];
 		const governmentOfficePos = Vector2D.add(pos, new Vector2D(10, 0));
 		const smallHousePos = Vector2D.add(pos, new Vector2D(-10, 0));
 
