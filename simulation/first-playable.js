@@ -6,7 +6,12 @@ function createFirstPlayableWorld()
 {
 	const state = createInitialEmpireChroniclesWorld();
 
-	state.economy = createEconomy();
+	state.economy = createEconomy({
+		electricity: { capacity: 20, production: 20, consumption: 10 },
+		water: { capacity: 20, production: 20, consumption: 10 },
+		sanitation: { capacity: 20, production: 20, consumption: 5 },
+		communications: { capacity: 20, production: 20, consumption: 5 }
+	});
 	state.player.speedMode = "normal";
 
 	const country = state.world.countries[0];
