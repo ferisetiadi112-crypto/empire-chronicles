@@ -146,6 +146,23 @@ Next integration: connect these to the country simulation tick so births, deaths
 
 ## 12. Economy, Production and Resources
 
+Empire Chronicles distinguishes **stock resources** from **network utilities**.
+
+### Core stock resources
+- Food
+- Money
+- Building materials
+- Fuel
+- Medicine
+
+### Core utilities
+- Electricity
+- Water
+- Sanitation
+- Communications
+
+Utilities are not treated as ordinary piles of goods. Each utility has network capacity, production, consumption and reserve. Buildings and infrastructure will later add demand or supply to these networks. Electricity and water are therefore part of the national/settlement resource model from the beginning, alongside other public-utility systems.
+
 ### Agriculture
 Current concepts: corn, wheat, peanuts, chicken, cattle, coffee, tea, cocoa and oil palm. Agriculture, livestock and plantations are treated as large production areas rather than ordinary compact building footprints.
 
