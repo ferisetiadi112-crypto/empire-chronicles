@@ -61,7 +61,7 @@ simulation.addPopulation(30);
 assert.strictEqual(country.population.total, 70);
 assert.strictEqual(settlement.stage, "town");
 settlement.cemeteryLevel = 3;
-simulation.runTick(1);
+simulation.tick(1);
 assert.strictEqual(settlement.stage, "city");
 
 simulation.setSpeed("paused");
