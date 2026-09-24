@@ -1,7 +1,7 @@
 Engine.LoadLibrary("rmgen");
 Engine.LoadLibrary("rmgen-common");
 
-function* GenerateMap()
+function* generateMap()
 {
 	globalThis.g_Map = new RandomMap(0, "grass1_spring");
 
