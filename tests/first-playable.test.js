@@ -20,6 +20,24 @@ const LOAD_ORDER = [
   "simulation/index.js"
 ];
 
+const randomMapPath = path.join(
+  ROOT,
+  "binaries/data/mods/empire-chronicles/maps/random/empire_chronicles_first_playable.js"
+);
+const randomMapSource = fs.readFileSync(randomMapPath, "utf8");
+assert.match(randomMapSource, /export function\\* generateMap\\(mapSettings\\)/);
+assert.doesNotMatch(randomMapSource, /function\\* GenerateMap/);
+
+const randomMapMetadataPath = path.join(
+  ROOT,
+  "binaries/data/mods/empire-chronicles/maps/random/empire_chronicles_first_playable.json"
+);
+const randomMapMetadata = JSON.parse(fs.readFileSync(randomMapMetadataPath, "utf8"));
+assert.strictEqual(
+  randomMapMetadata.settings.Script,
+  "empire_chronicles_first_playable.js"
+);
+
 const context = { console };
 vm.createContext(context);
 
