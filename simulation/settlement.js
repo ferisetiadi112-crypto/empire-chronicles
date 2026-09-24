@@ -5,12 +5,12 @@
 const SETTLEMENT_STAGES = [
   { id: "settlement", minPopulation: 20 },
   { id: "town", minPopulation: 40 },
-  { id: "city", minPopulation: 70 },
+  { id: "city", minPopulation: 70, requiredCemeteryLevel: 3 },
   { id: "province", minPopulation: 110 },
   { id: "capital", minPopulation: 160 }
 ];
 
-function getSettlementStage(population) {
+function getPopulationStage(population) {
   let stage = SETTLEMENT_STAGES[0];
 
   for (const candidate of SETTLEMENT_STAGES) {
@@ -18,6 +18,25 @@ function getSettlementStage(population) {
   }
 
   return stage.id;
+}
+
+function getSettlementStage(population, technologyLevel = 1, cemeteryLevel = 0) {
+  if (population < 20)
+    return "settlement";
+
+  let stage = "settlement";
+  for (const candidate of SETTLEMENT_STAGES) {
+    if (population < candidate.minPopulation)
+      break;
+
+    const requiredCemeteryLevel = candidate.requiredCemeteryLevel || 0;
+    if (technologyLevel < 1 || cemeteryLevel < requiredCemeteryLevel)
+      break;
+
+    stage = candidate.id;
+  }
+
+  return stage;
 }
 
 function createSettlement({ id, name, countryId, population = 20 } = {}) {
@@ -31,6 +50,7 @@ function createSettlement({ id, name, countryId, population = 20 } = {}) {
     countryId,
     population,
     stage: getSettlementStage(population),
+    cemeteryLevel: 0,
     governmentOfficeId: null,
     territoryCells: [],
     buildings: [],
@@ -39,6 +59,8 @@ function createSettlement({ id, name, countryId, population = 20 } = {}) {
 }
 
 if (typeof globalThis !== "undefined") {
+  globalThis.SETTLEMENT_STAGES = SETTLEMENT_STAGES;
+  globalThis.getPopulationStage = getPopulationStage;
   globalThis.getSettlementStage = getSettlementStage;
   globalThis.createSettlement = createSettlement;
 }
