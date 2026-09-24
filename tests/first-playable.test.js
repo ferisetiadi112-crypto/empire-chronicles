@@ -24,6 +24,17 @@ const randomMapPath = path.join(
   ROOT,
   "binaries/data/mods/empire-chronicles/maps/random/empire_chronicles_first_playable.js"
 );
+const progressionComponentPath = path.join(
+  ROOT,
+  "binaries/data/mods/empire-chronicles/simulation/components/EmpireChroniclesProgression.js"
+);
+const progressionComponentSource = fs.readFileSync(progressionComponentPath, "utf8");
+const governmentOfficeTemplatePath = path.join(
+  ROOT,
+  "binaries/data/mods/empire-chronicles/simulation/templates/structures/empire_chronicles/government_office.xml"
+);
+const governmentOfficeTemplateSource = fs.readFileSync(governmentOfficeTemplatePath, "utf8");
+
 const randomMapSource = fs.readFileSync(randomMapPath, "utf8");
 assert.match(randomMapSource, /export function\* generateMap\(mapSettings\)/);
 assert.doesNotMatch(randomMapSource, /function\* GenerateMap/);
