@@ -1,0 +1,26 @@
+name: Empire Chronicles First Playable
+
+on:
+  push:
+    paths:
+      - "simulation/**"
+      - "tests/**"
+  pull_request:
+    paths:
+      - "simulation/**"
+      - "tests/**"
+
+jobs:
+  simulation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run first playable self-test
+        run: node tests/first-playable.test.js
