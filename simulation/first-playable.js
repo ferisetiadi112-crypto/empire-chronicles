@@ -22,7 +22,7 @@ function createFirstPlayableWorld()
 		status: "operational"
 	});
 	settlement.governmentOfficeId = "government_office_001";
-	settlement.stage = getSettlementStage(settlement.population);
+	settlement.stage = getSettlementStage(settlement.population, country.technologyLevel, settlement.cemeteryLevel);
 
 	state.firstPlayable = {
 		version: "0.1.0",
@@ -60,7 +60,7 @@ function addPopulation(state, settlementId, amount)
 	country.population.total = nextPopulation;
 	country.population.employment.unemployed += amount;
 	settlement.population += amount;
-	settlement.stage = getSettlementStage(settlement.population);
+	settlement.stage = getSettlementStage(settlement.population, country.technologyLevel, settlement.cemeteryLevel);
 
 	return settlement.population;
 }
