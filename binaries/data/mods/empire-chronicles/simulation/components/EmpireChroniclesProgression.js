@@ -81,3 +81,5 @@ EmpireChroniclesProgression.prototype.GetNextStage =
 		? next
 		: current;
 };
+
+Engine.RegisterComponentType(IID_EmpireChroniclesProgression, "EmpireChroniclesProgression", EmpireChroniclesProgression);
