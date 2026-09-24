@@ -4,4 +4,7 @@
     <SpecificName>Government Office</SpecificName>
     <GenericName>Government Office</GenericName>
   </Identity>
+  <EmpireChroniclesProgression>
+    <TechnologyLevel>1</TechnologyLevel>
+  </EmpireChroniclesProgression>
 </Entity>
