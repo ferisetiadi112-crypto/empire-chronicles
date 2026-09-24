@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="structures/athen/civil_centre">
+  <Identity>
+    <SpecificName>Government Office</SpecificName>
+    <GenericName>Government Office</GenericName>
+  </Identity>
+</Entity>
